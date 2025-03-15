@@ -1,0 +1,9 @@
+# Ignore build artifacts
+*.exe
+*.out
+*.o
+*.a
+
+# Ignore dependency files
+vendor/
+.env

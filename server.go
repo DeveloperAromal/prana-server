@@ -8,20 +8,17 @@ import (
 	"github.com/DeveloperAromal/prana-server/internal/events"
 )
 
-// Location represents latitude and longitude
 type Location struct {
 	Lat float64 `json:"lat"`
 	Lng float64 `json:"lng"`
 }
 
-// ReqData represents the structure of the received JSON request
 type ReqData struct {
 	Location     Location `json:"location"`
 	Timestamp    string   `json:"time"`
 	AccidentType string   `json:"accident_type"`
 }
 
-// handler processes incoming HTTP POST requests with accident data
 func handler(w http.ResponseWriter, r *http.Request) {
 	if r.Method != http.MethodPost {
 		http.Error(w, "Invalid request method", http.StatusMethodNotAllowed)
@@ -34,7 +31,6 @@ func handler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	// Dispatch data to events functions
 	events.PrintLocation(data.Location.Lat, data.Location.Lng)
 	events.PrintTimestamp(data.Timestamp)
 	events.PrintAccidentType(data.AccidentType)
