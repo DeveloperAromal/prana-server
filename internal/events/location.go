@@ -1,7 +1,10 @@
 package events
 
-import "fmt"
+import (
+	"github.com/DeveloperAromal/prana-server/internal/events/finalizer"
+)
 
-func PrintLocation(lat, lng float64) {
-	fmt.Printf("Location: Latitude = %f, Longitude = %f\n", lat, lng)
+func LogLocation(lat, log float64) {
+	finalizer.FinalLocation(log, lat)
+
 }

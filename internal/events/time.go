@@ -1,7 +1,9 @@
 package events
 
-import "fmt"
+import (
+	"github.com/DeveloperAromal/prana-server/internal/events/finalizer"
+)
 
-func PrintTimestamp(timestamp string) {
-	fmt.Printf("Timestamp: %s\n", timestamp)
+func Logtime(timestamp string) {
+	finalizer.FinalTime(timestamp)
 }

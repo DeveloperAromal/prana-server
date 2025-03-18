@@ -1,7 +1,9 @@
 package events
 
-import "fmt"
+import (
+	"github.com/DeveloperAromal/prana-server/internal/events/finalizer"
+)
 
-func PrintAccidentType(accidentType string) {
-	fmt.Printf("Accident Type: %s\n", accidentType)
+func LogAccidentType(accidentType string) {
+	finalizer.FinalAccidentType(accidentType)
 }
